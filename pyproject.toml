@@ -7,8 +7,8 @@ authors = []
 [tool.poetry.dependencies]
 python = "^3.8"
 pydantic = "^1.9.2"
-typer = {extras = ["all"], version = "^0.6.1"}
-fern-fern-generator-exec-sdk = {version = "0.0.397", source = "fern-prod"}
+typer = { extras = ["all"], version = "^0.6.1" }
+fern-fern-generator-exec-sdk = { version = "0.0.397", source = "fern-prod" }
 fern-fern-ir-model = "0.0.2922"
 
 [tool.poetry.dev-dependencies]
@@ -29,6 +29,12 @@ secondary = true
 [tool.poetry.group.dev.dependencies]
 pytest-only = "^2.0.0"
 
+[tool.poetry.group.examples.dependencies]
+fastapi = "^0.104.0"
+uvicorn = "^0.23.2"
+fastapi-utils = "^0.2.1"
+python-multipart = "^0.0.6"
+
 [tool.black]
 line-length = 120
 target-version = ['py38']
@@ -38,7 +44,7 @@ include = '\.pyi?$'
 profile = "black"
 
 [tool.pytest.ini_options]
-testpaths = [ "tests" ]
+testpaths = ["tests"]
 addopts = "--ignore-glob=tests/**/generated --ignore-glob=tests/**/snapshots"
 
 [build-system]
